@@ -3,14 +3,14 @@
 // Initialisation de la classe 'Joueur'
  class Joueur
 {
-  private $_nom;
-  private $_poste;
-  private $_physique;
-  private $_endurance;
-  private $_vitesse;
-  private $_dribble;
-  private $_tir;
-  private $_general;
+  protected $_nom;
+  protected $_poste;
+  protected $_physique;
+  protected $_endurance;
+  protected $_vitesse;
+  protected $_dribble;
+  protected $_tir;
+  protected $_general;
 
   // GETTERS
   public function getNomJoueur()
