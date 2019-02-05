@@ -1,129 +1,148 @@
 <?php
 
-class Joueur()
+// Initialisation de la classe 'Joueur'
+class Joueur
 {
-  private $_physique;
   private $_nom;
+  private $_poste;
+  private $_physique;
   private $_endurance;
   private $_vitesse;
   private $_dribble;
   private $_tir;
-  private $_poste;
   private $_general;
-}
 
-public function defenseCalcul()
-{
-  //permet de calculer la valeur général d'un défenseur
-  return ($this->_physique + $this->_endurance + $this->_vitesse)/3;
 
-}
-public function attaqueCalcul()
-{
-  //permet de calculer la valeur général d'un attaquant
-  return ($this->_dribble + $this->_tir + $this->_vitesse)/3;
+  // Méthodes pour calculer les valeurs d'un joueur selon son poste
 
-}
-public function milieuCalcul()
-{
-  //permet de calculer la valeur général d'un milieu
-  return ($this->_physique + $this->_endurance + $this->_vitesse + $this->_tir + $this->_dribble)/5;
-
-}
-
-// GETTERS
-public function getNomJoueur()
-{
-  return $this->_nom;
-}
-public function getPhysiqueJoueur()
-{
-  return $this->_physique;
-}
-public function getVitesseJoueur()
-{
-  return $this->_vitesse;
-}
-public function getEnduranceJoueur()
-{
-  return $this->_endurance;
-}
-public function getTirJoueur()
-{
-  return $this->_tir;
-}
-public function getDribbleJoueur()
-{
-  return $this->_dribble;
-}
-public function getPosteJoueur()
-{
-  return $this->_poste;
-}
-public function getGeneralJoueur()
-{
-  return $this->_general;
-}
-
-// Setters
-public function setNomJoueur($nom)
-{
-  $this->_nom = $nom;
-}
-public function setPhysiqueJoueur($physique)
-{
-  $this->_physique = $physique ;
-}
-public function setEnduranceJoueur($endurance)
-{
-  $this->_endurance = $endurance ;
-}
-public function setVitesseJoueur($vitesse)
-{
-  $this->_vitesse = $vitesse;
-}
-public function setDribbleJoueur($dribble)
-{
-  $this->_dribble = $dribble ;
-}
-public function setTirJoueur($tir)
-{
-  $this->_tir = $tir ;
-}
-public function setPosteJoueur($poste)
-{
-  $this->_poste = $poste ;
-}
-
-public function setGeneral ()
-{
-  if($this->_poste == 'ATQ')
+  public function defenseCalcul()
   {
-    $this->_general = attaqueCalcul();
+    // Permet de calculer la valeur générale d'un défenseur
+    return ($this->_physique + $this->_endurance + $this->_vitesse)/3;
   }
-  else if($this->_poste == 'DEF')
+
+  public function attaqueCalcul()
   {
-    $this->_general = defenseCalcul();
+    // Permet de calculer la valeur générale d'un attaquant
+    return ($this->_dribble + $this->_tir + $this->_vitesse)/3;
   }
-  else if($this->_poste == 'MID')
+
+  public function milieuCalcul()
   {
-    $this->_general = milieuCalcul();
+    // Permet de calculer la valeur générale d'un milieu de terrain
+    return ($this->_physique + $this->_endurance + $this->_vitesse + $this->_tir + $this->_dribble)/5;
   }
-  else {
+
+
+  // GETTERS
+  public function getNomJoueur()
+  {
+    return $this->_nom; // Obtenir le nom du joueur
+  }
+  
+  public function getPosteJoueur()
+  {
+    return $this->_poste; // Obtenir le poste du joueur
+  }
+
+  public function getPhysiqueJoueur()
+  {
+    return $this->_physique; // Obtenir les capacités physiques du joueur
+  }
+
+  public function getEnduranceJoueur()
+  {
+    return $this->_endurance; // Obtenir l'endurance du joueur
+  }
+
+  public function getVitesseJoueur()
+  {
+    return $this->_vitesse; // Obtenir la vitesse du joueur
+  }
+
+  public function getDribbleJoueur()
+  {
+    return $this->_dribble; // Obtenir les capacités de 'dribbles' du joueur
+  }
+
+  public function getTirJoueur()
+  {
+    return $this->_tir; // Obtenir les capacités de 'tirs' du joueur
+  }
+
+  public function getGeneralJoueur()
+  {
+    return $this->_general; // Obtenir la valeur générale du joueur
+  }
+
+
+  // SETTERS
+  public function setNomJoueur($nom)
+  {
+    $this->_nom = $nom; // Attribuer un nom de joueur
+  }
+
+  public function setPosteJoueur($poste)
+  {
+    $this->_poste = $poste; // Attribuer un poste à un joueur
+  }
+
+  public function setPhysiqueJoueur($physique)
+  {
+    $this->_physique = $physique ; // Attribuer une capacité physique à un joueur
+  }
+
+  public function setEnduranceJoueur($endurance)
+  {
+    $this->_endurance = $endurance ; // Attribuer une capacité d'endurance à un joueur
+  }
+
+  public function setVitesseJoueur($vitesse)
+  {
+    $this->_vitesse = $vitesse; // Attribuer une capacité 'vitesse' à un joueur
+  }
+
+  public function setDribbleJoueur($dribble)
+  {
+    $this->_dribble = $dribble; // Attribuer une capacité 'dribble' à un joueur
+  }
+  
+  public function setTirJoueur($tir)
+  {
+    $this->_tir = $tir; // Attribuer une capacité 'tir' à un joueur
+  }
+
+  public function setGeneral() // Attribuer une valeur générale à un joueur selon son poste
+  {
+    if($this->_poste == 'ATQ')
     {
-      echo "errrorrrrrrrrrrrrr";
+      $this->_general = attaqueCalcul();
+    }
+    else if($this->_poste == 'DEF')
+    {
+      $this->_general = defenseCalcul();
+    }
+    else if($this->_poste == 'MID')
+    {
+      $this->_general = milieuCalcul();
+    }
+    else
+    {
+      echo "Erreur : aucun poste n'a été attribué à ce joueur.";
     }
   }
-}
-// Constructeur
-public function __construct($nom,$poste,$dribble,$tir,$vitesse,$endurance,$physique)
-{
-  $this->setNomJoueur($nom);
-  $this->setPosteJoueur($poste);
-  $this->setDribbleJoueur($dribble);
-  $this->setTirJoueur($tir);
-  $this->setVitesseJoueur($vitesse);
-  $this->setEnduranceJoueur($endurance);
-  $this->setPhysiqueJoueur($physique);
-  $this->setGeneral();
+
+
+  // Constructeur
+  public function __construct($nom, $poste, $physique, $endurance, $vitesse, $dribble, $tir)
+  {
+    $this->setNomJoueur($nom);
+    $this->setPosteJoueur($poste);
+    $this->setPhysiqueJoueur($physique);
+    $this->setEnduranceJoueur($endurance);
+    $this->setVitesseJoueur($vitesse);
+    $this->setDribbleJoueur($dribble);
+    $this->setTirJoueur($tir);
+    $this->setGeneral();
+  }
 }
