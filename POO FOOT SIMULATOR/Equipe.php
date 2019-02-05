@@ -26,5 +26,8 @@ class Equipe
   {
     $this->_drapeau = $drapeau;
   }
-  
+  public function setCompo(Joueur $joueur)
+  {
+    array_push($this->compo, $joueur);
+  }
 }
