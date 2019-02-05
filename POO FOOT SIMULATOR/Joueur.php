@@ -97,7 +97,7 @@
     $this->setEnduranceJoueur($endurance);
     $this->setVitesseJoueur($vitesse);
     $this->setDribbleJoueur($dribble);
-    $this->setTirJoueur($tir);`
+    $this->setTirJoueur($tir);
   }
 
 }

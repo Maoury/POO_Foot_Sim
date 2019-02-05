@@ -15,6 +15,10 @@ class Equipe
   {
     return $this->_drapeau;
   }
+  public function getCompo()
+  {
+    return $this->_compo;
+  }
 
   // Setters
   public function setNomEquipe($nom)
@@ -31,4 +35,5 @@ class Equipe
     // deplace la variable joueur dans le tableau compo
     array_push($this->compo, $joueur);
   }
+
 }

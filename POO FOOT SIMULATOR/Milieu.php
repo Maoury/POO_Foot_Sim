@@ -1,5 +1,5 @@
 <?php
-class Defenseur extends Joueur
+class Milieu extends Joueur
 {
 
     public function milieuCalcul()
