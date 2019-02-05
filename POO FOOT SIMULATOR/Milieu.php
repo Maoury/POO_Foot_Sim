@@ -7,7 +7,7 @@ class Defenseur extends Joueur
       // Permet de calculer la valeur générale d'un milieu de terrain
       return ($this->_physique + $this->_endurance + $this->_vitesse + $this->_tir + $this->_dribble)/5;
     }
-    
+
     public function setGeneral() // Attribuer une valeur générale à un milieu de terrain
     {
         $this->_general = milieuCalcul();

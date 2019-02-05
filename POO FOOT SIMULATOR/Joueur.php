@@ -99,4 +99,5 @@
     $this->setDribbleJoueur($dribble);
     $this->setTirJoueur($tir);`
   }
+
 }
