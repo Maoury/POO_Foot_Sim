@@ -4,7 +4,7 @@ class Equipe
 {
   private $_nom;
   private $_drapeau;
-
+  private $_compo = array();
   // Getters
   public function getNomEquipe()
   {
@@ -26,4 +26,5 @@ class Equipe
   {
     $this->_drapeau = $drapeau;
   }
+  
 }

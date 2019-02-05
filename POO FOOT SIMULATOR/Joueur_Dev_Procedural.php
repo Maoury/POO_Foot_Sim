@@ -6,4 +6,10 @@ $Joueur4 = ["Nom" => "Mamadou", "Poste" => "Attaquant", "Physique" => 4, "Endura
 
 var_dump($Joueur1);
 
+$joueur_phy = 82;
+$joueur_nom = "Henry";
+$joueur_tir = 83;
+$joueur_poste = "ATQ";
+
+$Henry = new Joueur("Henry","ATQ", 83, 87);
 ?>
