@@ -8,6 +8,7 @@ class Defenseur extends Joueur
   }
   public function setGeneral() // Attribuer une valeur générale à un defenseur selon ses caractéristique
   {
+    // PAS OUBLIER LES THIS LORSQUE L'ON EST DANS LA CLASSE
     $this->_general = $this->defenseCalcul();
   }
   //Constructeur

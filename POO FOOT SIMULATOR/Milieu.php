@@ -10,6 +10,7 @@ class Milieu extends Joueur
 
     public function setGeneral() // Attribuer une valeur générale à un milieu de terrain
     {
+      // PAS OUBLIER LES THIS LORSQUE L'ON EST DANS LA CLASSE
         $this->_general = $this->milieuCalcul();
     }
 

@@ -29,7 +29,9 @@ class Equipe
   }
 
   public function afficherCompo(){
+    // ON FAIT un foreach pour décomposer le array
     foreach($this->_compo as $joueur){
+      //on utilise la fonction getNom pour afficher juste le nom du joueur et non l'objet entier (problème de typage : string)
       echo $joueur->getNomJoueur() . '<br>';
     }
   }
