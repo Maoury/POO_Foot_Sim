@@ -1,7 +1,7 @@
 <?php
 
 // Initialisation de la classe 'Joueur'
-class Joueur
+ class Joueur
 {
   private $_nom;
   private $_poste;
@@ -12,34 +12,12 @@ class Joueur
   private $_tir;
   private $_general;
 
-
-  // Méthodes pour calculer les valeurs d'un joueur selon son poste
-
-  public function defenseCalcul()
-  {
-    // Permet de calculer la valeur générale d'un défenseur
-    return ($this->_physique + $this->_endurance + $this->_vitesse)/3;
-  }
-
-  public function attaqueCalcul()
-  {
-    // Permet de calculer la valeur générale d'un attaquant
-    return ($this->_dribble + $this->_tir + $this->_vitesse)/3;
-  }
-
-  public function milieuCalcul()
-  {
-    // Permet de calculer la valeur générale d'un milieu de terrain
-    return ($this->_physique + $this->_endurance + $this->_vitesse + $this->_tir + $this->_dribble)/5;
-  }
-
-
   // GETTERS
   public function getNomJoueur()
   {
     return $this->_nom; // Obtenir le nom du joueur
   }
-  
+
   public function getPosteJoueur()
   {
     return $this->_poste; // Obtenir le poste du joueur
@@ -106,43 +84,19 @@ class Joueur
   {
     $this->_dribble = $dribble; // Attribuer une capacité 'dribble' à un joueur
   }
-  
+
   public function setTirJoueur($tir)
   {
     $this->_tir = $tir; // Attribuer une capacité 'tir' à un joueur
   }
-
-  public function setGeneral() // Attribuer une valeur générale à un joueur selon son poste
-  {
-    if($this->_poste == 'ATQ')
-    {
-      $this->_general = attaqueCalcul();
-    }
-    else if($this->_poste == 'DEF')
-    {
-      $this->_general = defenseCalcul();
-    }
-    else if($this->_poste == 'MID')
-    {
-      $this->_general = milieuCalcul();
-    }
-    else
-    {
-      echo "Erreur : aucun poste n'a été attribué à ce joueur.";
-    }
-  }
-
-
   // Constructeur
   public function __construct($nom, $poste, $physique, $endurance, $vitesse, $dribble, $tir)
   {
     $this->setNomJoueur($nom);
-    $this->setPosteJoueur($poste);
     $this->setPhysiqueJoueur($physique);
     $this->setEnduranceJoueur($endurance);
     $this->setVitesseJoueur($vitesse);
     $this->setDribbleJoueur($dribble);
-    $this->setTirJoueur($tir);
-    $this->setGeneral();
+    $this->setTirJoueur($tir);`
   }
 }

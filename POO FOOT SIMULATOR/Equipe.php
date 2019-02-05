@@ -28,6 +28,7 @@ class Equipe
   }
   public function setCompo(Joueur $joueur)
   {
+    // deplace la variable joueur dans le tableau compo
     array_push($this->compo, $joueur);
   }
 }
