@@ -10,4 +10,15 @@ class Defenseur extends Joueur
   {
     $this->_general = defenseCalcul();
   }
+  //Constructeur
+  public function __construct($nom, $poste, $physique, $endurance, $vitesse, $dribble, $tir)
+  {
+    $this->setNomJoueur($nom);
+    $this->setPhysiqueJoueur($physique);
+    $this->setEnduranceJoueur($endurance);
+    $this->setVitesseJoueur($vitesse);
+    $this->setDribbleJoueur($dribble);
+    $this->setTirJoueur($tir);
+    $this->setGeneral();
+  }
 }
