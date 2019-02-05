@@ -3,7 +3,6 @@
 class Equipe
 {
   private $_nom;
-  private $_drapeau;
   private $_compo = array();
   // Getters
   public function getNomEquipe()
@@ -11,10 +10,7 @@ class Equipe
     return $this->_nom;
   }
 
-  public function getDrapeauEquipe()
-  {
-    return $this->_drapeau;
-  }
+
   public function getCompo()
   {
     return $this->_compo;
@@ -26,14 +22,21 @@ class Equipe
     $this->_nom = $nom;
   }
 
-  public function setDrapeauEquipe($drapeau)
-  {
-    $this->_drapeau = $drapeau;
-  }
   public function setCompo(Joueur $joueur)
   {
     // deplace la variable joueur dans le tableau compo
-    array_push($this->compo, $joueur);
+    array_push($this->_compo, $joueur);
   }
 
+  public function afficherCompo(){
+    foreach($this->_compo as $joueur){
+      echo $joueur->getNomJoueur() . '<br>';
+    }
+  }
+
+// Constructeur
+public function __construct($nom)
+{
+  $this->setNomEquipe($nom);
+}
 }

@@ -11,6 +11,7 @@ class Attaquant extends Joueur
     $this->setVitesseJoueur($vitesse);
     $this->setDribbleJoueur($dribble);
     $this->setTirJoueur($tir);
+    $this->setGeneral();
 
   }
   public function attaqueCalcul()
@@ -21,7 +22,7 @@ class Attaquant extends Joueur
 
   public function setGeneral() // Attribuer une valeur générale à un attaquant
   {
-    $this->_general = attaqueCalcul();
+    $this->_general = $this->attaqueCalcul();
   }
 
 }
