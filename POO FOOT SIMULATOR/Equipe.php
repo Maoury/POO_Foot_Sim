@@ -55,6 +55,8 @@ class Equipe
     }
     // on divise la moyenne par le nombre de de joueur
     $this->_moyenne = $this->_moyenne/$nbJoueur;
+
+    return $this->_moyenne;
   }
 // on fait une fonction static car elle ne requiet pas de this et ne dépend d'un bojet, c''est une fonctio qui s'execute normalement
   public static function EquipeGagnante(Equipe $equipe1, Equipe $equipe2)

@@ -45,3 +45,7 @@ echo $barca->getCompo()[2]->getNomJoueur().' ';
 echo $barca->getCompo()[2]->getGeneralJoueur().'<br>';
 // ON APPEL cette fonction en indiquant la classe dans la quelle est ce situe vu quel ne dépend d'aucun objet ( statique)
 Equipe::EquipeGagnante($barca, $arsenul);
+
+
+
+echo $arsenul->calculMoyenne();
