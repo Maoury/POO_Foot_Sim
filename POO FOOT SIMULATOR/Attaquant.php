@@ -2,7 +2,6 @@
 class Attaquant extends Joueur
 {
 
-
   public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)
   {
     $this->setNomJoueur($nom);

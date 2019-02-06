@@ -2,6 +2,7 @@
 
 class Equipe
 {
+  private $_moyenne;
   private $_nom;
   private $_compo = array();
   // Getters
@@ -35,7 +36,18 @@ class Equipe
       echo $joueur->getNomJoueur() . '<br>';
     }
   }
-
+  public function calculMoyenne()
+  {
+    //pour compter le nombre de joueur
+    $compteur = 0;
+    foreach($this->_compo as $joueur)
+    {
+      $this->_moyenne += $joueur->getGeneralJoueur();
+      $compteur++;
+    }
+    $this->_moyenne = $this->_moyenne/$compteur;
+    echo $this->getNomEquipe() . ' GENERAL ' . $this->_moyenne;
+  }
 // Constructeur
 public function __construct($nom)
 {

@@ -23,7 +23,7 @@ echo $arsenul->getCompo()[1]->getGeneralJoueur().'<br>';
 
 echo $arsenul->getCompo()[2]->getNomJoueur().' ';
 echo $arsenul->getCompo()[2]->getGeneralJoueur().'<br>';
-
+echo $arsenul->calculMoyenne();
 echo"<br>";
 
 
@@ -43,3 +43,4 @@ echo $barca->getCompo()[1]->getGeneralJoueur().'<br>';
 
 echo $barca->getCompo()[2]->getNomJoueur().' ';
 echo $barca->getCompo()[2]->getGeneralJoueur().'<br>';
+echo $barca->calculMoyenne();
