@@ -39,13 +39,17 @@ class Equipe
   public function calculMoyenne()
   {
     //pour compter le nombre de joueur
-    $compteur = 0;
+    $nbJoueur = 0;
+    //on boucle le tableau contenant les joueurs
     foreach($this->_compo as $joueur)
     {
+      //A chaque itération on ajoute la valeur general du joueur dans une variable
       $this->_moyenne += $joueur->getGeneralJoueur();
-      $compteur++;
+      // et on compte le nombre de joueur
+      $nbJoueur++;
     }
-    $this->_moyenne = $this->_moyenne/$compteur;
+    // on divise la moyenne par le nombre de de joueur
+    $this->_moyenne = $this->_moyenne/$nbJoueur;
     echo $this->getNomEquipe() . ' GENERAL ' . $this->_moyenne;
   }
 // Constructeur
