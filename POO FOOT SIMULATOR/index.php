@@ -23,7 +23,6 @@ echo $arsenul->getCompo()[1]->getGeneralJoueur().'<br>';
 
 echo $arsenul->getCompo()[2]->getNomJoueur().' ';
 echo $arsenul->getCompo()[2]->getGeneralJoueur().'<br>';
-echo $arsenul->calculMoyenne();
 echo"<br>";
 
 
@@ -44,8 +43,8 @@ echo $barca->getCompo()[1]->getGeneralJoueur().'<br>';
 echo $barca->getCompo()[2]->getNomJoueur().' ';
 echo $barca->getCompo()[2]->getGeneralJoueur().'<br>';
 // ON APPEL cette fonction en indiquant la classe dans la quelle est ce situe vu quel ne dépend d'aucun objet ( statique)
+
+echo $arsenul->calculMoyenne();
+
 Equipe::EquipeGagnante($barca, $arsenul);
-
-
-
 echo $arsenul->calculMoyenne();

@@ -2,7 +2,6 @@
 
 class Equipe
 {
-  private $_moyenne;
   private $_nom;
   private $_compo = array();
   // Getters
@@ -16,10 +15,7 @@ class Equipe
   {
     return $this->_compo;
   }
-  public function getMoyenne()
-  {
-    return $this->_moyenne = calculMoyenne();
-  }
+
   // Setters
   public function setNomEquipe($nom)
   {
@@ -43,20 +39,19 @@ class Equipe
   //obtenir la moyenne general d'une equipe
   public function calculMoyenne()
   {
+    $moyenne = 0;
     //pour compter le nombre de joueur
     $nbJoueur = 0;
     //on boucle le tableau contenant les joueurs
     foreach($this->_compo as $joueur)
     {
       //A chaque itération on ajoute la valeur general du joueur dans une variable
-      $this->_moyenne += $joueur->getGeneralJoueur();
+      $moyenne += $joueur->getGeneralJoueur();
       // et on compte le nombre de joueur
       $nbJoueur++;
     }
     // on divise la moyenne par le nombre de de joueur
-    $this->_moyenne = $this->_moyenne/$nbJoueur;
-
-    return $this->_moyenne;
+    return $moyenne/$nbJoueur;
   }
 // on fait une fonction static car elle ne requiet pas de this et ne dépend d'un bojet, c''est une fonctio qui s'execute normalement
   public static function EquipeGagnante(Equipe $equipe1, Equipe $equipe2)
