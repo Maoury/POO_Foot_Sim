@@ -11,6 +11,7 @@ class Attaquant extends Joueur
     $this->setDribbleJoueur($dribble);
     $this->setTirJoueur($tir);
     $this->setGeneral();
+    $this->setPasseJoueur();
 
   }
   public function attaqueCalcul()

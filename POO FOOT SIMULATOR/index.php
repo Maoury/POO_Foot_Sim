@@ -48,3 +48,4 @@ echo $arsenul->calculMoyenne();
 $arsenul->meilleurTireur();
 Equipe::EquipeGagnante($barca, $arsenul);
 echo $arsenul->calculMoyenne();
+echo '<br>';

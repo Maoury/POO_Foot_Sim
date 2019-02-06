@@ -80,6 +80,20 @@ class Equipe
     echo '<br>' . $tireur->getNomJoueur() . '<br>' ;
     return $tireur;
   }
+
+public function calculMoyennePasse()
+{
+  $moyenne = 0;
+  $nbJoueur = 0;
+
+  foreach($this->_compo as $joueur){
+    $moyenne += $joueur->getPasseJoueur();
+    $nbJoueur++;
+  }
+  return $moyenne/$nbJoueur;
+}
+
+
 // Constructeur
 public function __construct($nom)
 {

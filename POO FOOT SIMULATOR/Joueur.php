@@ -4,13 +4,13 @@
  class Joueur
 {
   protected $_nom;
-  protected $_poste;
   protected $_physique;
   protected $_endurance;
   protected $_vitesse;
   protected $_dribble;
   protected $_tir;
   protected $_general;
+  protected $_passe;
 
   // GETTERS
   public function getNomJoueur()
@@ -53,6 +53,11 @@
     return $this->_general; // Obtenir la valeur générale du joueur
   }
 
+  public function getPasseJoueur()
+  {
+    return $this->_passe;
+  }
+
 
   // SETTERS
   public function setNomJoueur($nom)
@@ -89,8 +94,14 @@
   {
     $this->_tir = $tir; // Attribuer une capacité 'tir' à un joueur
   }
+
+  public function setPasseJoueur()
+  {
+    $this->_passe = ($this->_dribble + $this->_endurance + $this->_vitesse + $this->_physique)/4;
+  }
+
   // Constructeur
-  public function __construct($nom, $poste, $physique, $endurance, $vitesse, $dribble, $tir)
+  public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)
   {
     $this->setNomJoueur($nom);
     $this->setPhysiqueJoueur($physique);
