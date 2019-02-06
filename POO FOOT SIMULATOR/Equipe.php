@@ -9,8 +9,6 @@ class Equipe
   {
     return $this->_nom;
   }
-
-
   public function getCompo()
   {
     return $this->_compo;
@@ -66,6 +64,21 @@ class Equipe
       echo $equipe2->getNomEquipe() . ' a remporté le match.';
 
     }
+  }
+  public function meilleurTireur()
+  {
+    $tireur;
+    $juninho = 0;
+    foreach($this->_compo as $joueur)
+    {
+      if($juninho < $joueur->getTirJoueur())
+      {
+        $juninho = $joueur->getTirJoueur();
+        $tireur = $joueur;
+      }
+    }
+    echo '<br>' . $tireur->getNomJoueur() . '<br>' ;
+    return $tireur;
   }
 // Constructeur
 public function __construct($nom)

@@ -10,9 +10,9 @@ require 'Defenseur.php';
 $arsenul = new Equipe('Arsenul');
 // on peut instancier un objet avec son constructeur dans différents endroits
 // ILLUSTRATION:
-$arsenul->setCompo(new Attaquant('Henry', 98, 89, 80, 70, 75));
-$arsenul->setCompo(new Attaquant('Bob', 58, 78, 80, 70, 75));
-$arsenul->setCompo(new Attaquant('Fred', 98, 89, 80, 70, 75));
+$arsenul->setCompo(new Attaquant('Henry', 98, 89, 80, 70, 35));
+$arsenul->setCompo(new Attaquant('Bob', 58, 78, 80, 70, 90));
+$arsenul->setCompo(new Attaquant('Fred', 98, 89, 80, 70, 85));
 $arsenul->afficherCompo();
 //Pour afficher un certain joueur on utilise les coordonnée du tableaux afin de selectionner l'item désiré et regarder son contenu avec la méthode adéquate
 echo $arsenul->getCompo()[0]->getNomJoueur().' ';
@@ -45,6 +45,6 @@ echo $barca->getCompo()[2]->getGeneralJoueur().'<br>';
 // ON APPEL cette fonction en indiquant la classe dans la quelle est ce situe vu quel ne dépend d'aucun objet ( statique)
 
 echo $arsenul->calculMoyenne();
-
+$arsenul->meilleurTireur();
 Equipe::EquipeGagnante($barca, $arsenul);
 echo $arsenul->calculMoyenne();
