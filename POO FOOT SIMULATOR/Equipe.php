@@ -65,6 +65,7 @@ class Equipe
 
     }
   }
+  // Fonction pour déterminer le meilleur au stats de tir de la fonction meilleurTireur
   public function meilleurTireur()
   {
     $tireur;
@@ -77,10 +78,25 @@ class Equipe
         $tireur = $joueur;
       }
     }
-    echo '<br>' . $tireur->getNomJoueur() . '<br>' ;
-    return $tireur;
+    return $tireur->getTirJoueur();
   }
-
+  //
+  // Fonction pour déterminer le meilleur au stats de tir de la fonction meilleurTireur
+  public function nomMeilleurTireur()
+  {
+    $tireur;
+    $juninho = 0;
+    foreach($this->_compo as $joueur)
+    {
+      if($juninho < $joueur->getTirJoueur())
+      {
+        $juninho = $joueur->getTirJoueur();
+        $tireur = $joueur;
+      }
+    }
+    return $tireur->getNomJoueur();
+  }
+//Fontion pour calculer la moyenne de passe de l'equipe
 public function calculMoyennePasse()
 {
   $moyenne = 0;
