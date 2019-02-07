@@ -61,10 +61,7 @@ class Equipe
     // on divise la moyenne par le nombre de de joueur
     return round($moyenne/$nbJoueur);
   }
-
-
-  // Afficher l'équipe qui remporte le match 
-  // on fait une fonction static car elle ne requiert pas de this et ne dépend d'un objet, c''est une fonction qui s'execute normalement
+// on fait une fonction static car elle ne requiet pas de this et ne dépend d'un bojet, c''est une fonctio qui s'execute normalement
   public static function EquipeGagnante(Equipe $equipe1, Equipe $equipe2)
   {
     if($equipe1->calculMoyenne() > $equipe2->calculMoyenne())
