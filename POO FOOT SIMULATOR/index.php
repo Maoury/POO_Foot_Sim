@@ -56,8 +56,9 @@ function Match (Equipe $equipe1, Equipe $equipe2){
   $moyennePasse1 = $equipe1->calculMoyennePasse();
   $moyennePasse2 = $equipe2->calculMoyennePasse();
   //LANCEMENT DE LA BOUCLE DE TOUTES LES OCCASION
-  for ($occaz=7; $occaz > 0 ; $occaz--)
+  for ($occaz=15; $occaz > 0 ; $occaz--)
   {
+
     // SI C EST A L EQUIPE 1 DE JOUER
     if ($turn == 'A')
     {
@@ -101,6 +102,7 @@ function Match (Equipe $equipe1, Equipe $equipe2){
             }
       }
     }
+    //Au tour de la deuxieme equipe de faire une OCCASION
     if ($turn == 'B')
     {
       $compteurPasse = 0;
@@ -163,4 +165,4 @@ function Match (Equipe $equipe1, Equipe $equipe2){
 
   }
 }
-match($Barca, $Arsenul);
+match($barca, $arsenul);
