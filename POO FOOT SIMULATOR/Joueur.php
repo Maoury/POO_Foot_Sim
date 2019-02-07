@@ -12,6 +12,7 @@
   protected $_general;
   protected $_passe;
 
+
   // GETTERS
   public function getNomJoueur()
   {
@@ -100,6 +101,7 @@
     $this->_passe = ($this->_dribble + $this->_endurance + $this->_vitesse + $this->_physique)/4;
   }
 
+  
   // Constructeur
   public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)
   {
@@ -109,6 +111,7 @@
     $this->setVitesseJoueur($vitesse);
     $this->setDribbleJoueur($dribble);
     $this->setTirJoueur($tir);
+    $this->setGeneral();
+    $this->setPasseJoueur();
   }
-
 }

@@ -4,17 +4,21 @@ class Equipe
 {
   private $_nom;
   private $_compo = array();
-  // Getters
+
+
+  // GETTERS
   public function getNomEquipe()
   {
     return $this->_nom;
   }
+
   public function getCompo()
   {
     return $this->_compo;
   }
 
-  // Setters
+  
+  // SETTERS
   public function setNomEquipe($nom)
   {
     $this->_nom = $nom;
@@ -26,35 +30,43 @@ class Equipe
     array_push($this->_compo, $joueur);
   }
 
-  public function afficherCompo(){
+
+  /// FONCTIONS DIVERSES ///
+
+  // Afficher la composition de l'équipe
+  public function afficherCompo()
+  {
     // ON FAIT un foreach pour décomposer le array
     foreach($this->_compo as $joueur){
       //on utilise la fonction getNom pour afficher juste le nom du joueur et non l'objet entier (problème de typage : string)
-      echo $joueur->getNomJoueur() . '<br>';
+      echo $joueur->getNomJoueur() . ' (' . $joueur->getGeneralJoueur() . ') <br>';
     }
   }
 
-  //obtenir la moyenne general d'une equipe
+
+  // Obtenir la moyenne generale d'une equipe
   public function calculMoyenne()
   {
-    $moyenne = 0;
-    //pour compter le nombre de joueur
-    $nbJoueur = 0;
+    $moyenne = 0; // on initialise la moyenne à 0
+    $nbJoueur = 0; // pour compter le nombre de joueur
+
     //on boucle le tableau contenant les joueurs
     foreach($this->_compo as $joueur)
     {
-      //A chaque itération on ajoute la valeur general du joueur dans une variable
+      // A chaque itération on ajoute la valeur generale du joueur dans une variable
       $moyenne += $joueur->getGeneralJoueur();
       // et on compte le nombre de joueur
       $nbJoueur++;
     }
     // on divise la moyenne par le nombre de de joueur
-    return $moyenne/$nbJoueur;
+    return round($moyenne/$nbJoueur);
   }
-// on fait une fonction static car elle ne requiet pas de this et ne dépend d'un bojet, c''est une fonctio qui s'execute normalement
+
+
+  // Afficher l'équipe qui remporte le match 
+  // on fait une fonction static car elle ne requiert pas de this et ne dépend d'un objet, c''est une fonction qui s'execute normalement
   public static function EquipeGagnante(Equipe $equipe1, Equipe $equipe2)
   {
-
     if($equipe1->calculMoyenne() > $equipe2->calculMoyenne())
     {
       echo $equipe1->getNomEquipe() . ' a remporté le match.';
@@ -62,10 +74,11 @@ class Equipe
     else
     {
       echo $equipe2->getNomEquipe() . ' a remporté le match.';
-
     }
   }
-  // Fonction pour déterminer le meilleur au stats de tir de la fonction meilleurTireur
+
+
+  // Obtenir le meilleur tireur de l'équipe
   public function meilleurTireur()
   {
     $tireur;
@@ -78,9 +91,11 @@ class Equipe
         $tireur = $joueur;
       }
     }
+    //echo $tireur->getNomJoueur() . ' (' . $tireur->getTirJoueur() . ') <br>' ;
+    //return $tireur;
     return $tireur->getTirJoueur();
   }
-  //
+
   // Fonction pour déterminer le meilleur au stats de tir de la fonction meilleurTireur
   public function nomMeilleurTireur()
   {
@@ -96,23 +111,24 @@ class Equipe
     }
     return $tireur->getNomJoueur();
   }
-//Fontion pour calculer la moyenne de passe de l'equipe
-public function calculMoyennePasse()
-{
-  $moyenne = 0;
-  $nbJoueur = 0;
 
-  foreach($this->_compo as $joueur){
-    $moyenne += $joueur->getPasseJoueur();
-    $nbJoueur++;
+  // Calculer la moyenne générale du nombre de passes
+  public function calculMoyennePasse()
+  {
+    $moyenne = 0;
+    $nbJoueur = 0;
+
+    foreach($this->_compo as $joueur){
+      $moyenne += $joueur->getPasseJoueur();
+      $nbJoueur++;
+    }
+    return round($moyenne/$nbJoueur);
   }
-  return $moyenne/$nbJoueur;
-}
 
 
-// Constructeur
-public function __construct($nom)
-{
-  $this->setNomEquipe($nom);
-}
+  // Constructeur
+  public function __construct($nom)
+  {
+    $this->setNomEquipe($nom);
+  }
 }
