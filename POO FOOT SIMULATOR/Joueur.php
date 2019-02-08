@@ -11,17 +11,13 @@
   protected $_tir;
   protected $_general;
   protected $_passe;
+  protected $_poste;
 
 
   // GETTERS
   public function getNomJoueur()
   {
     return $this->_nom; // Obtenir le nom du joueur
-  }
-
-  public function getPosteJoueur()
-  {
-    return $this->_poste; // Obtenir le poste du joueur
   }
 
   public function getPhysiqueJoueur()
@@ -59,16 +55,16 @@
     return $this->_passe;
   }
 
+  public function getPosteJoueur()
+  {
+    return $this->_poste; // Obtenir le poste du joueur
+  }
+
 
   // SETTERS
   public function setNomJoueur($nom)
   {
     $this->_nom = $nom; // Attribuer un nom de joueur
-  }
-
-  public function setPosteJoueur($poste)
-  {
-    $this->_poste = $poste; // Attribuer un poste à un joueur
   }
 
   public function setPhysiqueJoueur($physique)
@@ -113,5 +109,6 @@
     $this->setTirJoueur($tir);
     $this->setGeneral();
     $this->setPasseJoueur();
+    $this->setPosteJoueur();
   }
 }

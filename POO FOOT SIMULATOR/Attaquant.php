@@ -13,11 +13,17 @@ class Attaquant extends Joueur
     $this->_general = round($this->attaqueCalcul());
   }
 
+  public function setPosteJoueur() // Attribuer le poste "Attaquant" à un joueur
+  {
+    $this->_poste = 'Attaquant';
+  }
+  
 
   public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)
   {
     parent::__construct($nom, $physique, $endurance, $vitesse, $dribble, $tir);
     $this->setGeneral();
     $this->setPasseJoueur();
+    $this->setPosteJoueur();
   }
 }

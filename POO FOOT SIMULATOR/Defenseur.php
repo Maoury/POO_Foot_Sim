@@ -13,6 +13,11 @@ class Defenseur extends Joueur
     $this->_general = round($this->defenseCalcul());
   }
 
+  public function setPosteJoueur() // Attribuer le poste "Attaquant" à un joueur
+  {
+    $this->_poste = 'Défenseur';
+  }
+
 
   //Constructeur
   public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)

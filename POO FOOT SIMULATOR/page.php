@@ -18,13 +18,14 @@ require 'Defenseur.php';
 </head>
 <body>
 <div id="entete">
- <h1> <----- fOOT DE RUE -----> </h1>
+ <h1> <----- FOOT DE RUE -----> </h1>
 </div>
 
 <div id="main">
  <div id="menu">
   <h1> <--- EQUIPE ---> </h1>
    <p>
+
   	<?php 
        
     // On peut instancier un objet avec son constructeur dans différents endroits
@@ -36,6 +37,9 @@ $arsenul = new Equipe('Arsenul');
 $arsenul->setCompo(new Attaquant('Henry', 98, 89, 80, 70, 35));
 $arsenul->setCompo(new Attaquant('Bob', 58, 78, 80, 70, 90));
 $arsenul->setCompo(new Attaquant('Fred', 98, 89, 80, 70, 85));
+$arsenul->setCompo(new Defenseur('Omar', 98, 89, 80, 70, 74));
+$arsenul->setCompo(new Defenseur('Boubou', 87, 85, 83, 81, 79));
+$arsenul->setCompo(new Milieu('Djibril', 89, 91, 90, 88, 75));
 
 // On affiche la composition de l'équipe
 echo 'Composition de l\'équipe ' . $arsenul->getNomEquipe() . ' (Moyenne stats : ' . $arsenul->calculMoyenne() . ') : <br> <br>';
@@ -51,6 +55,9 @@ $barca = new Equipe('barca');
 $barca->setCompo(new Attaquant('Messi', 95, 89, 90, 76, 79));
 $barca->setCompo(new Attaquant('Boubou', 68, 68, 70, 50, 72));
 $barca->setCompo(new Attaquant('Sala', 92, 79, 85, 70, 77));
+$barca->setCompo(new Defenseur('Boulbi', 94, 91, 82, 68, 76));
+$barca->setCompo(new Defenseur('Jean-Michel PO', 87, 85, 83, 81, 79));
+$barca->setCompo(new Milieu('Neimad', 87, 89, 85, 84, 69));
 
 echo 'Composition de l\'équipe ' . $barca->getNomEquipe() . ' (Moyenne stats : ' . $barca->calculMoyenne() . ') : <br> <br>';
 $barca->afficherCompo();
@@ -190,66 +197,6 @@ echo"<br> <br>";
      
    </div>     
  </div>
-     
-<div id="footer">
- <h1> <--- LE GAGNANT ---> </h1>
-     <div id="deroulement2">
-     <?php
-     //fonction de l'equipe qui guagne avec un randum des joueurs...
- function equipeGagne($equipe1, $equipe2)
-{
-         echo"<br>";
-         echo "<-------------------  le match est trés trés trés trés trés chaud  ------------------>";
-         echo"<br>";
-    
-     
-    
-    if($equipe1->getCompo()[0]->getGeneralJoueur() + 
-       $equipe1->getCompo()[1]->getGeneralJoueur() + 
-       $equipe1->getCompo()[2]->getGeneralJoueur() < 
-       $equipe2->getCompo()[0]->getGeneralJoueur() + 
-       $equipe2->getCompo()[1]->getGeneralJoueur() + 
-       $equipe2->getCompo()[2]->getGeneralJoueur()) 
-    
-    {
-        echo"<br>";
-        echo " <h4><---------- l'équipe du barca a trés bien joué mais c'est l'équipe d'Arsenul qui gagne le match -----------></h4>"; 
-        echo"<br>";
-    }
-
-    elseif ($equipe1->getCompo()[0]->getGeneralJoueur() + 
-            $equipe1->getCompo()[1]->getGeneralJoueur() + 
-            $equipe1->getCompo()[2]->getGeneralJoueur() > 
-            $equipe2->getCompo()[0]->getGeneralJoueur() + 
-            $equipe2->getCompo()[1]->getGeneralJoueur() + 
-            $equipe2->getCompo()[2]->getGeneralJoueur())
-    
-    {   
-        echo"<br>";
-        echo " <h4><-------- l'équipe d'Arsenul a trés bien joué mais c'est l'équipe du barca qui gagne le match -------> </h4>";
-        echo"<br>";
-    }
-     
-     
-}
-
-equipeGagne($barca, $arsenul);
-     ?>
-     </div>  
-</div>
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

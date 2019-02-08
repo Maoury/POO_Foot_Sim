@@ -13,6 +13,11 @@ class Milieu extends Joueur
     $this->_general = round($this->milieuCalcul());
   }
 
+  public function setPosteJoueur() // Attribuer le poste "Attaquant" à un joueur
+  {
+    $this->_poste = 'Milieu';
+  }
+
 
   //Constructeur
   public function __construct($nom, $physique, $endurance, $vitesse, $dribble, $tir)
